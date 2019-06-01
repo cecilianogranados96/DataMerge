@@ -6,7 +6,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '172.18.118.117',
 	'username' => 'root',
 	'password' => '',
 	'database' => 'datamerge',
