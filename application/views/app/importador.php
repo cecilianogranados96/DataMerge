@@ -6,10 +6,10 @@
        <div class="col-lg-4 mb-4">
         </div>
             <div class="col-lg-4 mb-4">
-                <?= form_open_multipart('profesores/proceso_importacion',"class = 'user' "); ?>
+                <?= form_open_multipart('app/proceso_importacion',"class = 'user' "); ?>
                     <div class="form-group">
                         Seleccione un archivo:
-                        <input type="file" name="archivo" size="20" class="form-control" />
+                        <input type="file" name="archivo" size="20" class="form-control" multiple/>
                     </div>
                     <?=form_submit("Enviar",'Enviar', "class = 'btn btn-primary btn-user btn-block' "); ?>
                 <?=form_close(); ?>

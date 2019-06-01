@@ -13,7 +13,7 @@ class login_m extends CI_Model {
         if(!$this->db->insert('usuarios', $datos)){
             echo "<script>alert('ERROR Usuario registrado anteriormente');</script>";
         }else{
-            echo "<script>alert('Usuario registrado con exito');</script>";
+            echo "<script>alert('Usuario registrado con éxito');</script>";
         }
         echo "<script>window.location.href = '../../index.php';</script>";
 	}

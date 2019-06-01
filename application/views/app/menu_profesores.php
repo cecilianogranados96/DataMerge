@@ -13,7 +13,7 @@
           <span>Inicio</span></a>
         </li>
              <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url(); ?>index.php/app/importador">
+            <a class="nav-link" href="<?php echo base_url(); ?>index.php/app/">
           <i class="fas fa-fw fa-file-import"></i>
           <span>Importador</span></a>
         </li>
@@ -24,7 +24,7 @@
         </div>
 
         <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url(); ?>index.php/app/objetivos">
+            <a class="nav-link" href="<?php echo base_url(); ?>index.php/app/construir_consulta">
           <i class="fas fa-fw fa-object-ungroup"></i>
           <span>Constructor</span></a>
         </li>

@@ -5,9 +5,8 @@ class App extends CI_Controller {
 	public function index()
 	{
         $this->load->view('header');
-        $this->load->model('objetivos_m');
         $this->load->view('app/menu_profesores');
-		$this->load->view('app/objetivos');
+        $this->load->view('app/importador');
         $this->load->view('fotter');
 	}
 
@@ -15,15 +14,15 @@ class App extends CI_Controller {
 	{
         $this->load->view('header');
         $this->load->view('app/menu_profesores');
-		$this->load->view('app/nuevo_objetivo');
+				$this->load->view('app/nuevo_objetivo');
         $this->load->view('fotter');
 	}
 
-    public function importador()
+    public function construir_consulta()
 	{
         $this->load->view('header');
         $this->load->view('app/menu_profesores');
-		$this->load->view('app/importador');
+				$this->load->view('app/construir_consulta');
         $this->load->view('fotter');
 	}
 
@@ -33,10 +32,7 @@ class App extends CI_Controller {
         $this->importador_m->proceso_importacion();
 	}
 
-    public function registrar_objetivo(){
-        $this->load->model('objetivos_m');
-        $this->objetivos_m->registrar_objetivo();
-    }
+
 
     public function nueva_tarea()
 	{
@@ -64,14 +60,7 @@ class App extends CI_Controller {
         $this->load->view('fotter');
 	}
 
-    public function tareas()
-	{
-        $this->load->view('header');
-        $this->load->model('tareas_m');
-        $this->load->view('app/menu_profesores');
-		$this->load->view('app/tareas');
-        $this->load->view('fotter');
-	}
+
 
     public function usuarios()
 	{
@@ -97,30 +86,13 @@ class App extends CI_Controller {
         $this->login_m->actualizar_usuario();
 	}
 
-    public function asignar_tarea()
+    
+    public function guardar_contructor()
 	{
-        $this->load->view('header');
-        $this->load->model('tareas_m');
-        $this->load->view('app/menu_profesores');
-		$this->load->view('app/asignar_tarea');
-        $this->load->view('fotter');
+        print_r($_POST);
 	}
-
-    public function procesar_asignar_tarea()
-	{
-        $this->load->model('tareas_m');
-        $this->tareas_m->procesar_asignar_tarea();
-	}
-
-
-    public function bitacora()
-	{
-        $this->load->view('header');
-        $this->load->model('tareas_m');
-        $this->load->view('app/menu_profesores');
-		$this->load->view('app/bitacora');
-        $this->load->view('fotter');
-	}
+    
+    
 
     public function cuenta()
 	{
