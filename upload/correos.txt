@@ -1,0 +1,12 @@
+composer update
+
+composer clear-cache
+
+silviluc.n@hotmail.com admin
+
+jimenezjm28j@gmail.com j
+
+juan066@hotmail.es 1234
+
+ana.rojas@hotmail.com 1234
+

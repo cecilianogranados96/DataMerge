@@ -30,30 +30,29 @@
         </li>
 
         <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url(); ?>index.php/app/nuevo_objetivo">
+            <a class="nav-link" href="<?php echo base_url(); ?>index.php/app/visualizador">
           <i class="fas fa-fw fa-object-ungroup"></i>
           <span>Visualizador</span></a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url(); ?>index.php/app/nueva_tarea">
+            <a class="nav-link" href="<?php echo base_url(); ?>index.php/app/exportar">
           <i class="fas fa-fw fa-project-diagram"></i>
           <span>Exportar</span></a>
         </li>
 
-
         <hr class="sidebar-divider">
         <div class="sidebar-heading">
-            Seguridad
+            Perfil
         </div>
         <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url(); ?>index.php/app/cuenta">
           <i class="fas fa-fw fa-users-cog"></i>
-          <span>Proteger</span></a>
+          <span>Cuenta</span></a>
             <a class="nav-link" href="#" data-target="#logoutModal"  data-toggle="modal">
           <i class="fas fa-fw fa-sign-in-alt"></i>
           <span>Salir</span></a>
-
-
+            
+            
         </li>
     </ul>
     <div id="content-wrapper" class="d-flex flex-column">

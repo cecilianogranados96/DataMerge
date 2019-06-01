@@ -15,7 +15,6 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Email</th>
-                        <th>Rol</th>
                         <th>Acciones</th>
                     </tr>
                   </thead>
@@ -23,20 +22,18 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Email</th>
-                        <th>Rol</th>
                         <th>Acciones</th>
                     </tr>
                   </tfoot>
                   <tbody>
                       <?php
                         $datos = $this->login_m->get_usuarios();
-                        foreach($datos as $row)
-                        { 
+                        foreach($datos as $row){ 
                           echo '
                           <tr> 
                             <td>'.$row->nombre.'</td>
                             <td>'.$row->email.'</td>
-                            <td>'.$row->rol.'</td>
+                           
                             <td><center><a href="modificar_usuario/'.$row->id_usuario.'" class="btn btn-warning">Editar</a></center></td>
                 
                           </tr>';

@@ -2,53 +2,45 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class App extends CI_Controller {
 
-	public function index()
-	{
+	public function index(){
         $this->load->view('header');
         $this->load->view('app/menu_profesores');
         $this->load->view('app/importador');
         $this->load->view('fotter');
 	}
 
-    public function nuevo_objetivo()
-	{
+    public function nuevo_objetivo(){
         $this->load->view('header');
         $this->load->view('app/menu_profesores');
 				$this->load->view('app/nuevo_objetivo');
         $this->load->view('fotter');
 	}
 
-    public function construir_consulta()
-	{
+    public function construir_consulta(){
         $this->load->view('header');
         $this->load->view('app/menu_profesores');
-				$this->load->view('app/construir_consulta');
+        $this->load->view('app/construir_consulta');
         $this->load->view('fotter');
 	}
 
-    public function proceso_importacion()
-	{
+    public function proceso_importacion(){
         $this->load->model('importador_m');
         $this->importador_m->proceso_importacion();
 	}
 
 
 
-    public function nueva_tarea()
-	{
+    public function exportar(){
         $this->load->view('header');
-        $this->load->model('tareas_m');
         $this->load->view('app/menu_profesores');
-		$this->load->view('app/nueva_tarea');
+		$this->load->view('app/construir_consulta');
         $this->load->view('fotter');
 	}
 
-    public function objetivos()
-	{
+    public function visualizador(){
         $this->load->view('header');
-        $this->load->model('objetivos_m');
         $this->load->view('app/menu_profesores');
-		$this->load->view('app/objetivos');
+		$this->load->view('app/visualizador');
         $this->load->view('fotter');
 	}
 
@@ -87,9 +79,24 @@ class App extends CI_Controller {
 	}
 
     
-    public function guardar_contructor()
-	{
-        print_r($_POST);
+    public function guardar_contructor(){
+        $this->load->database();
+
+        $this->db->query("DELETE FROM `constructor`");
+        
+        $tabla1 = $_POST['tabla1']; 
+        $tabla2 = $_POST['tabla2']; 
+        $comparador = $_POST['comparador']; 
+        $especial = $_POST['especial']; 
+        if ($tabla1 != ""){
+            for($a =0; $a < sizeof($tabla1);$a++){
+                $tabla1_datos = explode("-", $tabla1[$a]);
+                $tabla2_datos = explode("-", $tabla2[$a]);
+                
+                $this->db->query("INSERT INTO `constructor`(`nombre_tabla1`, `nombre_campo1`, `nombre_tabla2`, `nombre_campo2`, `especial`, `comparacion`) VALUES ('".$tabla1_datos[0]."','".$tabla1_datos[1]."','".$tabla2_datos[0]."','".$tabla2_datos[1]."','".$especial[$a]."','".$comparador[$a]."')");
+            }
+        }
+        
 	}
     
     

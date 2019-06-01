@@ -35,24 +35,17 @@ class login_m extends CI_Model {
                $row = $query->row_array();
                 $_SESSION['usuario'] = $row['id_usuario'];
                 header('Location: ../app/');
-
             }
         }
-
 	}
 
-
-
-    public function get_usuarios()
-    {
+    public function get_usuarios(){
         $this->load->database();
-        $query = $this->db->query("SELECT *, IF(tipo = 2, 'Profesor','Estudiante') as rol from usuarios  where id_usuario != 0 order by tipo DESC");
+        $query = $this->db->query("SELECT * from usuarios  where id_usuario != 0 ");
         return $query->result();
 	}
 
-
-    public function actualizar_usuario()
-    {
+    public function actualizar_usuario(){
         $this->load->database();
         if ($this->input->post('password') == ''){
             $this->db->query("UPDATE `usuarios` SET `nombre`='".$this->input->post('nombre')."', tipo = '".$this->input->post('rol')."'  WHERE `id_usuario` = ".$this->uri->segment(3)."");
